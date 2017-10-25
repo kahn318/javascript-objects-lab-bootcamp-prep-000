@@ -1,22 +1,10 @@
-var recipes = new Object();
+var playlist = new Object({artistName : 'songTitle'});
 
-function updateObjectWithKeyAndValue(object, key, value) {
-  return Object.assign({}, object, {[key]:value})
+function updatePlaylist(playlist, artistName, songTitle){
+  return Object.assign({}, playlist, {[artistName]: songTitle})
 }
 
-function destructivelyUpdateObjectWithKeyAndValue(object, key, value) {
-  object[key]=value
-  return object
-}
-
-function deleteFromObjectByKey(object, key) {
-  var newObject = Object.assign({}, object)
-  newObject
-  delete newObject[key]
-  return newObject
-}
-
-function destructivelyDeleteFromObjectByKey(object, key){
-   delete object[key]
-   return object
+function removeFromPlaylist(playlist, artistName) {
+  delete playlist[artistName];
+  return playlist
 }
